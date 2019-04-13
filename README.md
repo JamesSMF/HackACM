@@ -62,9 +62,15 @@
 3. Use natural language. For example, "I will go to gym tomorrow
    at 14:00" will do the same thing as above.
 
+
+
+
 **Use natural language to get the list of events**
 
 for example, "What is my plan today" will be equavalent to "l"
+
+
+
 
 
 **Programmer-friendly input**
