@@ -180,7 +180,7 @@ if os.stat("Weekly.db").st_size != 0:
       copy = assignment[key]
       if int(stringDate) < todayDate:     # if the date is less than today's date
          del assignment[key]            # the assignment has passed due date
-      print bcolors.WHITE + (copy + " is automatically deleted because it has passed the due date") + bcolors.ENDC
+         print bcolors.WHITE + (copy + " is automatically deleted because it is in the past now.") + bcolors.ENDC
       # end if
    # end for
 # end if
@@ -247,9 +247,11 @@ while True:
      listWeek = set()
      for ddd in nextWeek:
         listWeek.add(ddd.split()[2])
-        nextWeek.close()
-        splitedCH = ch.split()[1:]   # for every item after 'rm'
-        itemToDel = ' '.join(splitedCH)
+     nextWeek.close()
+     splitedCH = ch.split()[1:]   # for every item after 'rm'
+     itemToDel = ' '.join(splitedCH)
+     # end for
+
      if itemToDel in assignment.values():  # if it is in the event dict
         for key in list(assignment.keys()):
            if assignment[key]==itemToDel:
@@ -705,7 +707,10 @@ while True:
 # end while
 
 if os.stat("DataBase.db").st_size != 0:    # if the database is not empty
-    inputFile.close()
+    try:
+       inputFile.close()
+    except:
+       a = 1
 if os.stat("Weekly.db").st_size != 0:    # if the weekly file was originally not empty
     nextWeek.close()
 
