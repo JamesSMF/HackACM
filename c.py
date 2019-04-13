@@ -249,7 +249,7 @@ while True:
         for key in list(assignment.keys()):
            if assignment[key]==itemToDel:
              del assignment[key]
-           print bcolors.FAIL +  (itemToDel + " is deleted") + bcolors.ENDC
+             print bcolors.FAIL +  (itemToDel + " is deleted") + bcolors.ENDC
      else:
        print(itemToDel + " not found")
      print('')
@@ -511,15 +511,18 @@ while True:
         print("Today is " + datetime.today().strftime('%Y-%m-%d') + ".")
      elif re.search("Fuck", ch) or re.search("Bustard", ch) or re.search("asshole", ch) or re.search("shit", ch) or re.search("whore", ch):
         print("No bad words, bitch.")
-     elif re.search("I will", ch) or re.search("I want to", ch) or re.search("I plan to", ch) or re.search("I intend to", ch) or re.search("to my plan", ch) or re.search("to my schedule",ch):
+     elif re.search("I will", ch) or re.search("I want to", ch) or re.search("I plan to", ch) or re.search("I intend to", ch) or re.search("to my plan", ch) or re.search("to my schedule",ch) or re.search("I am going to", ch) or re.search("I'm going to", ch):
        ch = re.sub("to my schedule", "", ch)
        ch = re.sub("I want to", "", ch)
        ch = re.sub("I intend to", "", ch)
        ch = re.sub("I will", "", ch)
        ch = re.sub("I plan to", "", ch)
        ch = re.sub("to my plan", "", ch)
+       ch = re.sub("I am going to", "", ch)
+       ch = re.sub("I'm going to", "", ch)
 
        if re.search("tomorrow",ch):
+         ch = re.sub("on tomorrow at", "", ch)
          ch = re.sub("tomorrow at", "", ch)
          ch = re.sub("tomorrow","",ch)     # delete "tomorrow"
          ch = re.sub("Tomorrow", "", ch)
@@ -640,8 +643,8 @@ while True:
        eventName = eventName.strip()
 
        # conflict check
+       flag = True
        if os.stat("DataBase.db").st_size != 0:
-          flag = True
           for datE in assignment:
              targetTime = datetime.strptime(datE, "%Y%m%d%H%M") # datetime type
              compTime = datetime.strptime(Date, "%Y%m%d%H%M")   # datetime type
@@ -653,17 +656,16 @@ while True:
                 ans =raw_input("Are you sure want to insert the event? (y/n)\n")
                 if ans=="y" or ans=="yes" or ans=='' or ans=='yup' or ans=='yeah' or ans=='Hell Yeah' or ans=='hell yeah':
                    continue
-             else:
-                flag = False
-                break
+                else:
+                   flag = False
+                   break
           # end for
+       # end if
 
-          if flag:   # if approved to insert the event
-             assignment[Date] = eventName
+       if flag:   # if approved to insert the event
+          assignment[Date] = eventName
           print bcolors.WARNING + bcolors.BOLD + "map succeeded" + bcolors.ENDC
-          print('')
-          # end if
-        # end if
+       # end if
      elif re.search("agenda", ch) or re.search('schedule', ch) or re.search("calendar", ch) or re.search("my plan", ch) or re.search("My plan", ch) or re.search("Schedule", ch) or re.search("Agenda", ch) or re.search("Calendar", ch):
        listEvents()
      elif charArray[0]=='I':
