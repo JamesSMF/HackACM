@@ -1,12 +1,12 @@
 # Todo Terminal App
 
-####===========================================
+#####===========================================
 
-####Welcome to Todo App developed by James Li.
-####This app is a schedule management app which
-####helps you to make and manage daily schedules.
+#####Welcome to Todo App developed by James Li.
+#####This app is a schedule management app which
+#####helps you to make and manage daily schedules.
 
-####===========================================
+#####===========================================
 
 Basic operations:
 
