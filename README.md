@@ -15,8 +15,8 @@
 
 **1. Enter "i" to insert a new event**
 
--- After entering "i", you will be prompted to enter a
-   date. You can enter the date in any format you like
+-- After entering "i", you will be prompted to enter an event
+   name and date. You can enter the date in any format you like
    (e.g. 20180114 or 2018/04/26 or 2018-06-15). But be
    careful that year should come first followed by month
    and date subsequently.
@@ -27,8 +27,8 @@
 
 **2. Enter "d" to delete an old event**
 
--- Enter the name of the assignment which you want to
-   delete to delete the assignment.
+-- Enter the name of the event which you want to
+   delete to delete the event.
 
 **3. Enter "c" to check the date of a specific event**
 
@@ -46,7 +46,6 @@
  
 **8. Press "q" to exit**
  
-=========================================== 
 
 
 
@@ -62,6 +61,39 @@
 
 3. Use natural language. For example, "I will go to gym tomorrow
    at 14:00" will do the same thing as above.
+
+**Use natural language to get the list of events**
+
+for example, "What is my plan today" will be equavalent to "l"
+
+
+**Programmer-friendly input**
+
+1. "ls" = "l"
+
+2. rm + <event name> can delete the event quickly
+
+
+
+Features to mention
+=================================================
+
+1. This program automatically deletes events that has past
+   its date, because I want to convey the idea of looking
+	forward instead of looking back.
+
+2. If you don't want to calculate the actual date of an event,
+	don't worry! You can use words such as "today", "tomorrow",
+	"Tuesday", etc. to insert events.
+
+3. Don't want to mess the schedule up? Afraid of getting conflict
+   schedule? No worry! If there is another event around the event
+	you are going to insert, the program will throw a warning message.
+	If you insist to insert that event, type "yes". Of course, if you
+	want to be fancy, typing "hell yeah" will also do the work...
+
+
+
 
 
 

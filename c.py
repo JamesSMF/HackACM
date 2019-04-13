@@ -216,8 +216,8 @@ while True:
      f.close()
      break
    elif (charArray[0] == 'i' or charArray[0] == 'I') and len(ch)==1:
-     name = raw_input("   1. Enter assignment name\n")
-     Date = raw_input("   2. Enter the date (format: year + month + day, e.g. 20170318)\n")
+     name = raw_input("   1. Enter event name\n")
+     Date = raw_input("   2. Enter the date (format: year + month + day)\n")
      if Date == "today" or Date=='':
        Date = datetime.today().strftime('%Y%m%d')
      elif Date == "tomorrow":
