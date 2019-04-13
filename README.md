@@ -11,9 +11,9 @@
 
 
 
-## Basic operations:
-
-**1. Enter "i" to insert a new event**
+Basic operations:
+================================================
+## 1. Enter "i" to insert a new event
 
 -- After entering "i", you will be prompted to enter an event
    name and date. You can enter the date in any format you like
@@ -25,33 +25,33 @@
    also enter the time in any format that you like.
    But hour should come before minute.
 
-**2. Enter "d" to delete an old event**
+## 2. Enter "d" to delete an old event
 
 -- Enter the name of the event which you want to
    delete to delete the event.
 
-**3. Enter "c" to check the date of a specific event**
+## 3. Enter "c" to check the date of a specific event
 
-**4. Enter "t" to get a list of things to do tomorrow**
+## 4. Enter "t" to get a list of things to do tomorrow
 
-**5. Enter "o" to get a list of things to do today**
+## 5. Enter "o" to get a list of things to do today
 
-**6. Enter "l" to get 16 deadline-in-the-ass events**
+## 6. Enter "l" to get 16 deadline-in-the-ass events
 
 -- In order not to make the screen seem messed. Only
    most recent 16 events will pop up. (enter "more"
    to show more)
 
-**7. Enter "r" to revise the date of a certain event**
+## 7. Enter "r" to revise the date of a certain event
  
-**8. Press "q" to exit**
+## 8. Press "q" to exit
  
 
 
 
-## Advanced Techniques
-
-**Three different ways to insert an event:**
+Advanced Techniques
+=============================================
+## Three different ways to insert an event:
 
 1. Use "i", as mentioned aboved.
 
@@ -65,13 +65,13 @@
 
 <br/>
 
-**Use natural language to get the list of events**
+## Use natural language to get the list of event
 
 for example, "What is my plan today" will be equavalent to "l"
 
 <br/>
 
-**Programmer-friendly input**
+## Programmer-friendly input
 
 1. "ls" = "l"
 
