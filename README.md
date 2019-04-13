@@ -75,7 +75,7 @@ for example, "What is my plan today" will be equavalent to "l"
 
 1. "ls" = "l"
 
-2. rm + <event name> can delete the event quickly
+2. rm + \<event name\> can delete the event quickly
 
 
 
