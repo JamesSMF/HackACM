@@ -8,9 +8,13 @@
 
 ##### ===========================================
 
+
+
+
 ## Basic operations:
 
 **1. Enter "i" to insert a new event**
+
 -- After entering "i", you will be prompted to enter a
    date. You can enter the date in any format you like
    (e.g. 20180114 or 2018/04/26 or 2018-06-15). But be
@@ -22,6 +26,7 @@
    But hour should come before minute.
 
 **2. Enter "d" to delete an old event**
+
 -- Enter the name of the assignment which you want to
    delete to delete the assignment.
 
@@ -31,7 +36,8 @@
 
 **5. Enter "o" to get a list of things to do today**
 
-**6. Enter "l" to get 10 deadline-in-the-ass events**
+**6. Enter "l" to get 16 deadline-in-the-ass events**
+
 -- In order not to make the screen seem messed. Only
    most recent 16 events will pop up. (enter "more"
    to show more)
@@ -41,3 +47,21 @@
 **8. Press "q" to exit**
  
 =========================================== 
+
+
+
+## Advanced Techniques
+
+**Three different ways to insert an event:**
+
+1. Use "i", as mentioned aboved.
+
+2. Use "map". For example, "map go to gym tomorrow 14:00"
+   will create the event "go to gym" and map it to tomorrow
+	14:00
+
+3. Use natural language. For example, "I will go to gym tomorrow
+   at 14:00" will do the same thing as above.
+
+
+
