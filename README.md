@@ -92,6 +92,11 @@ Features to mention
 	If you insist to insert that event, type "yes". Of course, if you
 	want to be fancy, typing "hell yeah" will also do the work...
 
+4. Will you do something at 2 am or 3 am? Well... probably not. So, when
+   you use the map function and type "map go to Mike's house tomorrow 2:30",
+	it will automatically be interpreted as 14:30 in the afternoon. What if
+	you do want to do something at 2:30 am? Simplly adding a "0" will solve
+	the problem. In other words, "map go to Mike's house tomorrow 02:30".
 
 
 
