@@ -243,8 +243,13 @@ while True:
        print(tobeDeleted + " not found")
      # end if-else
    elif charArray[0]=='rm' or charArray[0]=='delete':
-     splitedCH = ch.split()[1:]   # for every item after 'rm'
-     itemToDel = ' '.join(splitedCH)
+     nextWeek = open("Weekly.db", "r")
+     listWeek = set()
+     for ddd in nextWeek:
+        listWeek.add(ddd.split()[2])
+        nextWeek.close()
+        splitedCH = ch.split()[1:]   # for every item after 'rm'
+        itemToDel = ' '.join(splitedCH)
      if itemToDel in assignment.values():  # if it is in the event dict
         for key in list(assignment.keys()):
            if assignment[key]==itemToDel:
@@ -264,19 +269,19 @@ while True:
                    break
                splitedInput = newInput.split()
                listOfInput = list()
-               if splitedInput[0] == "Mon" or splitedInput == "Monday":
+               if splitedInput[0] == "Mon" or splitedInput[0] == "Monday":
                    listOfInput.append("0")
-               elif splitedInput[0] == "Tues" or splitedInput == "Tuesday":
+               elif splitedInput[0] == "Tues" or splitedInput[0] == "Tuesday":
                    listOfInput.append("1")
-               elif splitedInput[0] == "Wed" or splitedInput == "Wednesday":
+               elif splitedInput[0] == "Wed" or splitedInput[0] == "Wednesday":
                    listOfInput.append("2")
-               elif splitedInput[0] == "Thur" or splitedInput == "Thursday":
+               elif splitedInput[0] == "Thur" or splitedInput[0] == "Thursday":
                    listOfInput.append("3")
-               elif splitedInput[0] == "Fri" or splitedInput == "Friday":
+               elif splitedInput[0] == "Fri" or splitedInput[0] == "Friday":
                    listOfInput.append("4")
-               elif splitedInput[0] == "Sat" or splitedInput == "Saturday":
+               elif splitedInput[0] == "Sat" or splitedInput[0] == "Saturday":
                    listOfInput.append("5")
-               elif splitedInput[0] == "Sun" or splitedInput == "Sunday":
+               elif splitedInput[0] == "Sun" or splitedInput[0] == "Sunday":
                    listOfInput.append("6")
                else:
                    print("Please enter a valid weekday")
