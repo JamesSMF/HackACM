@@ -63,15 +63,13 @@
    at 14:00" will do the same thing as above.
 
 
-
+<br/>
 
 **Use natural language to get the list of events**
 
 for example, "What is my plan today" will be equavalent to "l"
 
-
-
-
+<br/>
 
 **Programmer-friendly input**
 
