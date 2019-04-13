@@ -1,4 +1,4 @@
-# Todo Terminal App
+# Todo Command Line App
 
 ##### ===========================================
 
@@ -6,9 +6,21 @@
 ##### This app is a schedule management app which
 ##### helps you to make and manage daily schedules.
 
+##### Team members:
+##### James Li
+
 ##### ===========================================
 
 
+
+
+<br/>
+How to run it
+=================
+
+Enter "python c.py" on command line
+
+<br/>
 
 
 Basic operations:

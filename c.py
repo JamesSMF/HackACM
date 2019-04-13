@@ -196,7 +196,7 @@ print bcolors.HEADER + "----------------------------------------------" + bcolor
 while True:
    if os.stat("DataBase.db").st_size != 0:
      assignment = OrderedDict(sorted(assignment.items(), key=lambda x: int(x[0])))
-   print bcolors.PERFECTBLUE + "Commands: ls, map, rm, mv, i, o, q, t, c, r, d" + bcolors.ENDC
+   print bcolors.PERFECTBLUE + "Commands: ls, map, rm, i, o, q, t, c, r, d" + bcolors.ENDC
    print bcolors.PERFECTBLUE + "Detailed instructions are in the README file." + bcolors.ENDC
    print bcolors.PERFECTBLUE + "Please enter your operation:" + bcolors.ENDC
    ch = raw_input("")
