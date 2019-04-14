@@ -6,8 +6,9 @@
 ##### This app is a schedule management app which
 ##### helps you to make and manage daily schedules.
 <br/>
-##### Team members:
-##### James Li
+
+##### Team Name: Super James
+##### Team members: James Li
 
 ##### ===========================================
 
