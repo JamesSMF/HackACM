@@ -662,9 +662,16 @@ while True:
          continue
 
        exactTime = "".join(str(x) for x in timeList)
+       if (int(exactTime)>0 and int(exactTime)<500) or re.search("in the afternoon", ch) or re.search("in the evening", h):
+         ch = re.sub("in the afternoon", "", ch)
+         ch = re.sub("in the evening", "", ch)
+         exactTime = str(int(exactTime) + 1200)
+       elif len(exactTime)==3 and int(exactTime)>0:
+         exactTime = ["0"] + exactTime
        Date = Date + str(exactTime)
        Date = re.sub("[^0-9]", "", Date)
        if len(Date)==4:
+         ch = re.sub("at", "", ch)
          Date = datetime.today().strftime('%Y%m%d') + Date
 
        if len(Date)!=12:
