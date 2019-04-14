@@ -326,6 +326,7 @@ while True:
    elif charArray[0] == 'r' or charArray[0] == 'R':
      name = raw_input("   1. Enter assignment name\n")
      if name in assignment.values():         # check if the assignment is in the dict
+       del assignment[assignment.keys()[assignment.values().index(name)]]
        revisedDate = raw_input("   2. Enter the revised date (formate: Year-Month-Day)\n")   # get new date
        if revisedDate == "today" or revisedDate=="Today":
            revisedDate = str(datetime.today().strftime('%Y%m%d'))
