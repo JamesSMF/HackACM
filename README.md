@@ -49,16 +49,24 @@ Basic operations:
 
 ## 5. Enter "o" to get a list of things to do today
 
-## 6. Enter "l" to get 16 deadline-in-the-ass events
+## 6. Enter "weekly" to insert weekly schedules
+
+-- Weekly schedule will be here, always, every week.
+   Follow the instruction to insert the event in a
+	correct format
+
+-- "weekly" is still under development.
+
+## 7. Enter "l" to get 16 deadline-in-the-ass events
 
 -- In order not to make the screen seem messed. Only
    most recent 16 events will pop up. (enter "more"
    to show more)
 
-## 7. Enter "r" to revise the date of a certain event
+## 8. Enter "r" to revise the date of a certain event
  
-## 8. Press "q" to exit
- 
+## 9. Press "q" to exit
+
 
 <br/><br/>
 
@@ -90,7 +98,7 @@ for example, "What is my plan today" will be equavalent to "l"
 
 2. rm + \<event name\> can delete the event quickly
 
-
+<br/><br/>
 
 Features to mention
 =================================================

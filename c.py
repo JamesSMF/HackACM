@@ -186,8 +186,7 @@ if os.stat("Weekly.db").st_size != 0:
 # end if
 
 print("")
-# Up to this point, all history date have been stored into the dictionary and sorted #
-#  bcolors.WARNING + bcolors.BOLD + "map succeeded" + bcolors.ENDC
+# Up to this point, all history data have been stored into the dictionary and sorted #
 print bcolors.HEADER + "Welcome to Todo App developed by James Li." + bcolors.ENDC
 print bcolors.HEADER +("Today is " + datetime.today().strftime('%Y-%m-%d') + ".") + bcolors.ENDC
 print bcolors.HEADER +"Thanks for using this app. Have a nice one :)" + bcolors.ENDC
@@ -310,7 +309,7 @@ while True:
    elif charArray[0] == 'c' or charArray[0] == 'C':
      name = raw_input("   1. Enter assignment name\n")
      if name in assignment.values():         # check if the assignment is in the dict
-       print(bytes(dateFormat(assignment[name])))   # print the date and time
+       print dateFormat(assignment.keys()[assignment.values().index(name)])     # print the date and time
      else:                      # not found
        print(name + " not found")
      print(" ")
@@ -327,11 +326,36 @@ while True:
    elif charArray[0] == 'r' or charArray[0] == 'R':
      name = raw_input("   1. Enter assignment name\n")
      if name in assignment.values():         # check if the assignment is in the dict
-       revisedDate = raw_input("   2. Enter the new date\n")   # get new date
-       revisedDate = re.sub("[^0-9]", "", revisedDate)        # keep only numeric chars
-       revisedTime = raw_input("   3. Enter the rnew time\n")   # get new time
+       revisedDate = raw_input("   2. Enter the revised date (formate: Year-Month-Day)\n")   # get new date
+       if revisedDate == "today" or revisedDate=="Today":
+           revisedDate = str(datetime.today().strftime('%Y%m%d'))
+       elif revisedDate == "tomorrow" or revisedDate == "Tomorrow":
+           whateverShit = str(date.today() + timedelta(days=1))
+           revisedDate = re.sub("[^0-9]", "", whateverShit)
+       elif revisedDate == "Sun" or revisedDate == "Sunday":
+           revisedDate = next_weekday(datetime.today(), 6).strftime("%Y%m%d")
+       elif revisedDate == "Sat" or revisedDate == "Saturday":
+           revisedDate = next_weekday(datetime.today(), 5).strftime("%Y%m%d")
+       elif revisedDate == "Fri" or revisedDate == "Friday":
+           revisedDate = next_weekday(datetime.today(), 4).strftime("%Y%m%d")
+       elif revisedDate == "Thur" or revisedDate == "Thursday":
+           revisedDate = next_weekday(datetime.today(), 3).strftime("%Y%m%d")
+       elif revisedDate == "Wed" or revisedDate == "Wednesday":
+           revisedDate = next_weekday(datetime.today(), 2).strftime("%Y%m%d")
+       elif revisedDate == "Tues" or revisedDate == "Tuesday":
+           revisedDate = next_weekday(datetime.today(), 1).strftime("%Y%m%d")
+       elif revisedDate == "Mon" or revisedDate == "Monday":
+           revisedDate = next_weekday(datetime.today(), 0).strftime("%Y%m%d")
+       else:
+           revisedDate = re.sub("[^0-9]", "", revisedDate)        # keep only numeric chars
+
+       revisedTime = raw_input("   3. Enter the revised time\n")   # get new time
        revisedTime = re.sub("[^0-9]", "", revisedTime)        # keep only numeric chars
-       assignment[revisedDate + revisedTime] = name          # concatenate and store
+       if len(revisedTime) + len(revisedDate) != 12:
+           print bcolors.WARNING + ("\nPlease enter a valid date and time") + bcolors.ENDC
+       else:
+           assignment[revisedDate + revisedTime] = name          # concatenate and store
+           print bcolors.WARNING + ("Revision succeeded\n") + bcolors.ENDC
      else:                      # not found
        print(name + " not found")
      print(" ")
@@ -343,7 +367,7 @@ while True:
        diff = longest - keyLen + 2   # the number of required spaces between name and date
        stringDate = key[:8]         # keep only YMD
        if int(stringDate) - todayDate == 1:    # get all assignments due tomorrow
-         print(assignments[key] + diff*" " + bytes(dateFormat(key)))
+         print(assignment[key] + diff*" " + bytes(dateFormat(key)))
      print("")
    elif charArray[0] == 'o' or charArray[0] == 'O':    # similar to the last one
      longest = longestName(assignment)      # get the longest event name
@@ -430,7 +454,7 @@ while True:
        else:
          charArray[-1] = str('0' + charArray[-1])
 
-     if charArray[-2]=="today":
+     if charArray[-2]=="today" or charArray[-2]=="tonight":
        Date = datetime.today().strftime('%Y%m%d')
        Date = Date + str(charArray[-1])
      elif charArray[-2]=='tomorrow':
@@ -710,7 +734,7 @@ if os.stat("DataBase.db").st_size != 0:    # if the database is not empty
     try:
        inputFile.close()
     except:
-       a = 1
+       a = 1  # do nothing instead
 if os.stat("Weekly.db").st_size != 0:    # if the weekly file was originally not empty
     nextWeek.close()
 
