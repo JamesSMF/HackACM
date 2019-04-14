@@ -126,5 +126,20 @@ Features to mention
 
 
 
+<br/><br/>
+
+Some Possible Improvements
+===============================================
+
+1. I know nothing about frontend. Making this app a more usable
+   app needs frontend.
+
+2. I could possibly add a buffer, which allows users to undo operations.
+
+3. I should make some operation to allow user to redo last command (this
+	will be more friendly to typos).
+
+
+
 
 
